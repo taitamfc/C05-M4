@@ -1,0 +1,15 @@
+<td class="text-center">{{ item.id }}</td>
+<td>{{ item.task }}</td>
+<td class="text-center">
+    <span class="label" [ngClass]="{
+        'label-danger' : (item.level == 2),
+        'label-info' : (item.level == 1),
+        'label-success' : (item.level == 0)
+    }">
+        {{ item.level | mylevel }}
+    </span>
+</td>
+<td>
+    <button type="button" class="btn btn-warning" (click)="handleClick(item.id)">Edit</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+</td>
